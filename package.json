@@ -12,12 +12,20 @@
   },
   "keywords": [
     "babel-plugin",
-    "optional chaining"
+    "optional chaining",
+    "logical optional chaining"
   ],
   "author": "Mahesh Krishna Kumar",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining/issues"
   },
-  "homepage": "https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining#readme"
+  "homepage": "https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining#readme",
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.8.3",
+    "@babel/plugin-syntax-optional-chaining": "^7.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4"
+  }
 }

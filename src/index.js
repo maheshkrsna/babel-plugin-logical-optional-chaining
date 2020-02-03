@@ -1,10 +1,13 @@
-export default function(babel) {
-  const { types: t , api} = babel;
+import {declare} from '@babel/helper-plugin-utils';
+import syntaxOptionalChaining from "@babel/plugin-syntax-optional-chaining";
+import { types as t } from "@babel/core";
 
+export default declare((api) => {
   api.assertVersion(7);
 
   return {
     name: "babel-plugin-logical-optional-chaining",
+    inherits: syntaxOptionalChaining,
     visitor: {
       OptionalMemberExpression(path) {
         // Flag to preserve Computed Property Name Format
@@ -47,4 +50,4 @@ export default function(babel) {
       }
     }
   };
-}
+})
