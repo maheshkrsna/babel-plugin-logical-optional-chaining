@@ -10,5 +10,10 @@ pluginTester({
     formatResult: r => r
 });
 
-// TODO: formatResult option is not preventing prettier from trimming down
-// empty lines. Raise an issue.
+// As described here https://github.com/babel/babel/issues/8407,
+// Babel strips any empty lines when converting code to ASTs.
+// To preserve empty lines, we need to convert code to CSTs
+// (Concrete Syntax Trees), which isn't supported by Babel yet.
+// !important:
+// All test inputs and outputs must not contain empty lines
+// lest our test cases will fail (False Negatives).
