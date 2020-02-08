@@ -1,31 +1,19 @@
 {
-  "name": "babel-plugin-logical-optional-chaining",
-  "version": "1.0.0",
-  "description": "Transform optional chaining operators into a series of logical checks",
-  "main": "src/index.js",
+  "private": true,
   "scripts": {
-    "test": "jest test/index.test.js"
+    "build": "babel packages/babel-plugin-logical-optional-chaining/src --out-dir packages/babel-plugin-logical-optional-chaining/lib",
+    "test": "jest packages/babel-plugin-logical-optional-chaining/test/index.test.js",
+    "deploy": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining.git"
   },
-  "keywords": [
-    "babel-plugin",
-    "optional chaining",
-    "logical optional chaining"
-  ],
   "author": "Mahesh Krishna Kumar",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining/issues"
-  },
   "homepage": "https://github.com/maheshkrsna/babel-plugin-logical-optional-chaining#readme",
-  "dependencies": {
-    "@babel/helper-plugin-utils": "^7.8.3",
-    "@babel/plugin-syntax-optional-chaining": "^7.8.3"
-  },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "babel-plugin-tester": "^8.0.1",
