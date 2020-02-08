@@ -3,7 +3,7 @@
   "scripts": {
     "build": "babel packages/babel-plugin-logical-optional-chaining/src --out-dir packages/babel-plugin-logical-optional-chaining/lib",
     "test": "jest packages/babel-plugin-logical-optional-chaining/test/index.test.js",
-    "deploy": "npm run test && npm run build"
+    "deploy": "npm run test && npm run build && cp *.md packages/babel-plugin-logical-optional-chaining && cd packages/babel-plugin-logical-optional-chaining && npm version patch && npm publish && cd ../../"
   },
   "repository": {
     "type": "git",
