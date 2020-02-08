@@ -40,13 +40,17 @@ export default declare((api) => {
       },
 
       OptionalCallExpression(path) {
+        const functionIdentifierString = t.stringLiteral('function');
+        const functionCallExpression = t.callExpression(path.node.callee, path.node.arguments);
+        
+        const typeCheck = t.unaryExpression('typeof', path.node.callee);
+        const isTypeAFunction = t.binaryExpression('===', typeCheck, functionIdentifierString);
+        
+        const functionCheckExpression = t.parenthesizedExpression(t.logicalExpression('&&', path.node.callee, isTypeAFunction));
+        
         path.replaceWith(
-          t.logicalExpression(
-            "&&",
-            path.node.callee,
-            t.callExpression(path.node.callee, path.node.arguments)
-          )
-        );
+          t.logicalExpression('&&', functionCheckExpression, functionCallExpression)
+        )
       }
     }
   };
