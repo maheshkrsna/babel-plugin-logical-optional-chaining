@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-logical-optional-chaining",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform optional chaining operators into a series of logical checks",
   "main": "lib/index.js",
   "repository": {
