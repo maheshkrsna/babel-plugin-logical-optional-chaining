@@ -99,8 +99,3 @@ Add this plugin inside of babel.config.js or .babelrc
     ]
 }
 ```
-
-### Contributors
-___
-[John Simon](https://twitter.com/Doctor_Vamp)
-[Mahesh Krishna Kumar](https://twitter.com/fsdevkris)
